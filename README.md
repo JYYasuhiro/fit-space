@@ -9,7 +9,7 @@ This project utilizes the following:
  React,
  Node.js,
  Express.js,
- and PostgresQL,
+ and PostgresQL.
 
 ***Progress***
 
