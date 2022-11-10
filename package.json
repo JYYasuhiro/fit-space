@@ -1,0 +1,19 @@
+{
+  "name": "solo-mvp",
+  "version": "1.0.0",
+  "description": "***Description*** The purpose is to allow a user to choose from a selection of workout routines, spread out over the course of seven days.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JYYasuhiro/solo-MVP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JYYasuhiro/solo-MVP/issues"
+  },
+  "homepage": "https://github.com/JYYasuhiro/solo-MVP#readme"
+}
