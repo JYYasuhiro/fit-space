@@ -5,11 +5,11 @@ The original intent is for this to be used by individuals who struggle with main
 
 ***Framework***
 This project utilizes the following:
- -Javascript
- -React
- -Node.js
- -Express.js
- -PostgresQL
+ Javascript,
+ React,
+ Node.js,
+ Express.js,
+ and PostgresQL,
 
 ***Progress***
 
