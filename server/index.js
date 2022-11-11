@@ -1,7 +1,7 @@
 const setupServer = require('./server');
 const PORT = process.env.PORT || 8080;
 const server = setupServer();
-// const db = require('../db/knex');
+const db = require('../db/knex');
 
 
 // (async () => {
