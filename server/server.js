@@ -1,5 +1,5 @@
 const express = require("express");
-// const db = require('../db/knex');
+const db = require('../db/knex');
 const path = require('path');
 
 function setupServer() {
