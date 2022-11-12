@@ -23,7 +23,7 @@ function setupServer() {
         res.status(500).send(err);
       }
     });
-    //returns the day of the week, week_table ID
+    //responds with the day of the week, week_table ID
     app.get('/week/:id', async (req,res) => {
         const id = req.params.id;
         try {
@@ -34,6 +34,19 @@ function setupServer() {
             res.status(200).send(table[0].day);
         } catch(err) {
             res.status(500).send(err);
+        }
+    });
+//responds with one exercise with instructions on how many sets and reps
+//exercise_id is a number, so there's no exercise name return
+    app.get('/workout/:id', async (req,res) => {
+        const id = req.params.id;
+        try {
+            const table = await db('workout_table')
+                .where('id', id)
+                .select('*');
+            res.status(200).send(table[0])
+        } catch(err) {
+            res.status(500).send(err)
         }
     })
     
