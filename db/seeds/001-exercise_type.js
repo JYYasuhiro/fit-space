@@ -13,5 +13,6 @@ exports.seed = async function(knex) {
     {id: 5, name: 'abs'},
     {id: 6, name: 'triceps'},
     {id: 7, name: 'biceps'},
+    {id: 8, name: 'rest'}
   ]);
 };

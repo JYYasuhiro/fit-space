@@ -28,6 +28,7 @@ exports.seed = async function(knex) {
     {id: 20, exercise_name: 'cable tricep extensions', exercise_type: 6},
     {id: 21, exercise_name: 'overhead tricep extensions', exercise_type: 6},
     {id: 22, exercise_name: 'seated curls', exercise_type: 7},
-    {id: 23, exercise_name: 'EZ-bar preacher curls', exercise_type: 7}
+    {id: 23, exercise_name: 'EZ-bar preacher curls', exercise_type: 7},
+    {id: 24, exercise_name: 'rest', exercise_type: 8}
   ]);
 };
