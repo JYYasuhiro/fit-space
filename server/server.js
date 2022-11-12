@@ -6,7 +6,7 @@ function setupServer() {
     const app = express();
     
     app.use(express.json());
-    app.use(express.static(path.resolve(__dirname,'../my-app/dist')));
+    app.use(express.static(path.resolve(__dirname,'../client/dist')));
 
     app.get('/hello', async (req,res) => {
         res.status(200).send('🍎 successful test get endpoint')
