@@ -1,7 +1,12 @@
-import react from 'react';
+import React from 'react';
 import axios from 'axios';
 
-const Week = ({handleBackClick}) => {
+type Props = {
+  handleBackClick: React.MouseEventHandler<HTMLButtonElement> | undefined
+}
+
+const Week = ({handleBackClick}:Props) => {
+
     //returns all days of the week 
     //each day should be clickable, showing the workout for the particular day
     

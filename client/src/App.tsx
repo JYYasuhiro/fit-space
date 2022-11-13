@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import axios from "axios";
+// import axios from "axios";
 import Navbar from "./Navbar";
 import Menu from "./Menu";
 import Week from "./Week";
