@@ -12,12 +12,10 @@ const Week = ({handleBackClick}:Props) => {
     
     
     //handles workout fetches here?
-// function handleWorkoutFetch() {
-    
-    
-    
-//     const workout = axios.get('/')
-// }
+const handleWorkoutFetch = async ()=> {
+    const workout = await axios.get('/hello')
+    console.log(workout);
+}
 
   return (
     <>
@@ -25,7 +23,7 @@ const Week = ({handleBackClick}:Props) => {
         Back
       </button>
       <div className='menu_card'>
-        <h1>Sunday</h1>
+        <h1 onClick={handleWorkoutFetch}>Sunday</h1>
       </div>
       <div className='menu_card'>
         <h1>Monday</h1>
