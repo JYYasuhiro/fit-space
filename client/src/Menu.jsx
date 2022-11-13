@@ -1,9 +1,13 @@
 import react from 'react';
+import './menu.css';
 
-export default function Menu() {
+const Menu = ({handleBackClick}) => {
     //returns all workout options: A (push-pull), B (bro-split), C (calisthenics)
   return (
     <>
+      <button onClick={handleBackClick}>
+        Back
+      </button>
       <div className='menu_card'>
         <h1>A: The Push-pull Workout</h1>
       </div>
@@ -16,3 +20,5 @@ export default function Menu() {
     </>
   )
 }
+
+export default Menu;
