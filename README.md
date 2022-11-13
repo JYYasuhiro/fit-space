@@ -8,6 +8,7 @@ The original intent is for this to be used by individuals who struggle with main
 ***Framework***
 This project utilizes the following:
  Javascript,
+ Typescript,
  React,
  Node.js,
  Express.js,
