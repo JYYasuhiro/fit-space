@@ -1,12 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-
-
-//this component will show once a day of the week is clicked
+import './workout.css'
 
 const Workout = ({handleBackClick, setDay}) => {
   
-
     return (
         <>
         <button onClick={()=>{

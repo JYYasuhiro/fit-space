@@ -1,10 +1,10 @@
 const express = require("express");
 const db = require('../db/knex');
 const path = require('path');
-
+const cors = require('cors')
 function setupServer() {
     const app = express();
-    
+    app.use(cors());
     app.use(express.json());
     app.use(express.static(path.resolve(__dirname,'../client/dist')));
 
