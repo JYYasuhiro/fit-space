@@ -4,13 +4,14 @@ import "./App.css";
 import Navbar from "./Navbar";
 import Menu from "./Menu";
 import Week from "./Week";
+import Workout from "./Workout";
 
 const App = () => {
   const [currentView, setCurrentView] = useState("menu") //view is either menu or week?
   const [workout, setWorkout] = useState("");//sets which type of workout is desired.
   const [day, setDay] = useState(0); //sets day to day of week chosen in Week
 //when a workout option is clicked, TWO states are changed, currentView and workout.
-console.log("day is",day)
+console.log("day is", day);
 //"menu" is the default, then will switch currentView to "week" if back button is clicked.
 const handleBackClick = () => {
   if(currentView === "menu") {
@@ -43,11 +44,16 @@ console.log("current view", currentView);
           setWorkout={setWorkout}
           />
         ) : (
+          day === 0 ? (
           <Week handleBackClick={handleBackClick}
           workout={workout}
           setDay={setDay}
           day={day}
-          />
+          />):(
+          <Workout 
+          handleBackClick={handleBackClick}
+          day = {day}/>
+          )
         )}
       </div>
     </div>
