@@ -2,17 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import './workout.css'
 
-const Workout = ({handleBackClick, setDay}) => {
-  
+const Workout = ({handleBackClick, setDay, day}) => {
+
     return (
         <>
-        <button onClick={()=>{
+        <button className="back-button" onClick={()=>{
              handleBackClick();
-             setDay(0);
-        }
-           
-            }>Back</button>
-          <div>workout of the day:</div>
+             setDay("");
+        }}>Back</button>
+          <div>Here's your workout for {day}</div>
         </>
     )
 }
