@@ -1,5 +1,9 @@
 ****FitSpace****
 
+(how to setup)
+(who to contact in case of problems)
+
+
 ***Description***
 The purpose is to allow a user to choose from a selection of workout routines, spread out over the course of seven days.
 
