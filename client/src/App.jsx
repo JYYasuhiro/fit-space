@@ -7,14 +7,10 @@ import Week from "./Week";
 
 const App = () => {
   const [currentView, setCurrentView] = useState("menu") //view is either menu or week?
-  const [workout, setWorkout] = useState("");  //sets which type of workout is desired.
-//when a workout option is clicked, TWO states are changed, currentView and workout
-
-
-//sets the state of workout to be either "push-pull", "bro-split", or "calisthenics", as a string
-
-
-
+  const [workout, setWorkout] = useState("");//sets which type of workout is desired.
+  const [day, setDay] = useState(0); //sets day to day of week chosen in Week
+//when a workout option is clicked, TWO states are changed, currentView and workout.
+console.log("day is",day)
 //"menu" is the default, then will switch currentView to "week" if back button is clicked.
 const handleBackClick = () => {
   if(currentView === "menu") {
@@ -45,11 +41,13 @@ console.log("current view", currentView);
           handleBackClick={handleBackClick}
           handleCurrentView={handleCurrentView}
           setWorkout={setWorkout}
-          workout={workout}
           />
         ) : (
           <Week handleBackClick={handleBackClick}
-          workout={workout}/>
+          workout={workout}
+          setDay={setDay}
+          day={day}
+          />
         )}
       </div>
     </div>

@@ -53,6 +53,19 @@ function setupServer() {
             res.status(500).send(err)
         }
     })
+//responds with whole workout session for the day, usually with 3-4 exercises
+    app.get('/workout/day/:id', async (req,res) => {
+      const id = req.params.id;
+      try {
+          const table = await db('workout_table')
+              .where('day_id', id)
+              .select('*');
+              console.log(table);
+          res.status(200).send(table[0])
+      } catch(err) {
+          res.status(500).send(err)
+      }
+  })
     
     return app;
 }
