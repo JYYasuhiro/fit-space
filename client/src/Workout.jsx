@@ -9,6 +9,7 @@ const Workout = ({handleBackClick, day}) => {
 
     return (
         <>
+        <button onClick={handleBackClick}>Back</button>
           <div>workout of the day:</div>
         </>
     )
