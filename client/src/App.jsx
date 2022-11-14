@@ -16,6 +16,19 @@ console.log("current view", currentView);
 console.log("chosen workout is:", workout);
 //"menu" is the default, then will switch currentView to "week" if back button is clicked.
 
+
+//switches view from menu to week by clicking on a workout on menu
+const handleCurrentView = () => {
+  if(currentView === "workout") {
+    setCurrentView("week") 
+ } else if(currentView === "week") {
+    setCurrentView("menu")
+ } else {
+  setCurrentView("week")
+ }
+}
+
+
   return (
     <div className="App">
       <div className="navbar">
@@ -37,7 +50,8 @@ console.log("chosen workout is:", workout);
           day={day}
           />):(
           <Workout 
-          handleBackClick={()=>setCurrentView("week")} 
+          handleBackClick={()=>setCurrentView("week")}
+          setDay={setDay}
           day={day}/>
           )
         )}
