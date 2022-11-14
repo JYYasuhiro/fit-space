@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-type Props = {
-  handleBackClick: React.MouseEventHandler<HTMLButtonElement> | undefined
-}
 
-const Week = ({handleBackClick}:Props) => {
+
+const Week = ({handleBackClick}) => {
   
     //returns all days of the week
     //in the state 'workout', the string for a particular workout should be set

@@ -1,10 +1,7 @@
 import React from 'react';
 import './menu.css';
-type Props = {
-  handleBackClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
-  handleCurrentView: React.MouseEventHandler<HTMLButtonElement> | undefined;
-}
-const Menu = ({handleBackClick, handleCurrentView}:Props) => {
+
+const Menu = ({handleBackClick, handleCurrentView}) => {
     //returns all workout options: A (push-pull), B (bro-split), C (calisthenics)
   return (
     <>
