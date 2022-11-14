@@ -1,23 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 // import axios from "axios";
 import Navbar from "./Navbar";
 import Menu from "./Menu";
 import Week from "./Week";
+import Workout from "./Workout";
 
 const App = () => {
   const [currentView, setCurrentView] = useState("menu") //view is either menu or week?
-  const [workout, setWorkout] = useState("");  //sets which type of workout is desired.
-//when a workout option is clicked, TWO states are changed, currentView and workout
-
-const handleSetWorkout = (event) => {
-  //sets the state of workout to be either "push-pull", "bro-split", or "calisthenics", as a string
-  
-  console.log(event.target)
-  return event.target;
-  //pass this down as a prop, so that in Week component, the fetch will know which workout to retrieve.
-}
-
+  const [workout, setWorkout] = useState("");//sets which type of workout is desired.
+  const [day, setDay] = useState(0); //sets day to day of week chosen in Week
+//when a workout option is clicked, TWO states are changed, currentView and workout.
+console.log("day is", day);
+//"menu" is the default, then will switch currentView to "week" if back button is clicked.
 const handleBackClick = () => {
   if(currentView === "menu") {
     setCurrentView("week")
@@ -28,6 +23,10 @@ const handleBackClick = () => {
 
 const handleCurrentView = () => {
   //switches view from menu to week by clicking on a workout on menu
+  if(currentView === "menu") {
+    setCurrentView("week")
+  }
+  console.log("view is changed!")
 }
 
 console.log("current view", currentView);
@@ -42,10 +41,19 @@ console.log("current view", currentView);
           <Menu 
           handleBackClick={handleBackClick}
           handleCurrentView={handleCurrentView}
-          handleSetWorkout={handleSetWorkout}
+          setWorkout={setWorkout}
           />
         ) : (
-          <Week handleBackClick={handleBackClick}/>
+          day === 0 ? (
+          <Week handleBackClick={handleBackClick}
+          workout={workout}
+          setDay={setDay}
+          day={day}
+          />):(
+          <Workout 
+          handleBackClick={handleBackClick}
+          day = {day}/>
+          )
         )}
       </div>
     </div>

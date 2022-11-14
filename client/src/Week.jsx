@@ -3,17 +3,17 @@ import axios from 'axios';
 
 
 
-const Week = ({handleBackClick}) => {
-  
+const Week = ({handleBackClick, workout, setDay, day}) => {
+  console.log("workout", workout);
     //returns all days of the week
     //in the state 'workout', the string for a particular workout should be set
     //each day should be clickable, showing the workout for the particular day
     //onClick 
     
     //handles workout fetches here?
-const handleWorkoutFetch = async() => {
-  const fetchedWorkout = await axios.get('/workout/1').then(response =>console.log(response.data));
-  console.log(fetchedWorkout);
+const handleWorkoutFetch = async(day) => {
+  const fetchedWorkout = await axios.get(`/workout/day/${day}`).then(response =>response.data);
+  console.log("fetchedWorkout is", fetchedWorkout);
   //get fetch to show
 }
   return (
@@ -22,25 +22,28 @@ const handleWorkoutFetch = async() => {
         Back
       </button>
       <div className='menu_card'>
-        <button onClick={handleWorkoutFetch}>Sunday</button>
+        <button onClick={()=> {
+          setDay(1);
+          handleWorkoutFetch(day);
+        }}>Sunday</button>
       </div>
       <div className='menu_card'>
-        <button>Monday</button>
+        <button onClick={()=> setDay(2)}>Monday</button>
       </div>
       <div className='menu_card'>
-        <button>Tuesday</button>
+        <button onClick={()=> setDay(3)}>Tuesday</button>
       </div>
       <div className='menu_card'>
-        <button>Wednesday</button>
+        <button onClick={()=> setDay(4)}>Wednesday</button>
       </div>
       <div className='menu_card'>
-        <button>Thursday</button>
+        <button onClick={()=> setDay(5)}>Thursday</button>
       </div>
       <div className='menu_card'>
-        <button>Friday</button>
+        <button onClick={()=> setDay(6)}>Friday</button>
       </div>
       <div className='menu_card'>
-        <button>Saturday</button>
+        <button onClick={()=> setDay(7)}>Saturday</button>
       </div>
     </>
   )
