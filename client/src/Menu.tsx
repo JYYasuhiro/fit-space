@@ -11,7 +11,7 @@ const Menu = ({handleBackClick}:Props) => {
         Back
       </button>
       <div className='menu_card'>
-        <h1>A: The Push-pull Workout</h1>
+        <button >A: The Push-pull Workout</button>
       </div>
       <div className='menu_card'>
         <h1>B: The "Bro-split" Workout</h1>

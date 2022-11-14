@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 type Props = {
@@ -6,17 +6,18 @@ type Props = {
 }
 
 const Week = ({handleBackClick}:Props) => {
-
+  const [workout, setWorkout] = useState<string>("");
     //returns all days of the week 
     //each day should be clickable, showing the workout for the particular day
-    
+    //onClick 
     
     //handles workout fetches here?
 const handleWorkoutFetch = async ()=> {
-    const workout = await axios.get('/hello')
-    console.log(workout);
+  const fetchedWorkout = await axios.get('http://localhost:8080/workout/1').then(response =>response.data);
+  setWorkout(fetchedWorkout);
 }
 
+console.log(workout);
   return (
     <>
       <button onClick={handleBackClick}>
