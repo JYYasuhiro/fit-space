@@ -8,8 +8,12 @@ function setupServer() {
     app.use(express.json());
     app.use(express.static(path.resolve(__dirname,'../client/dist')));
 
-    app.get('/hello', async (req,res) => {
+    app.get('/hello', (req,res) => {
+      try{
         res.status(200).send('🍎 successful test get endpoint')
+      } catch(err) {
+        res.status(500).send('could not GET')
+      }  
    });
     //indicates what body part an exercise will be hitting, by exercise_type ID 
     app.get('/type/:id', async (req,res) => {
