@@ -6,43 +6,43 @@ type Props = {
 }
 
 const Week = ({handleBackClick}:Props) => {
-  const [workout, setWorkout] = useState<string>("");
-    //returns all days of the week 
+  
+    //returns all days of the week
+    //in the state 'workout', the string for a particular workout should be set
     //each day should be clickable, showing the workout for the particular day
     //onClick 
     
     //handles workout fetches here?
-const handleWorkoutFetch = async ()=> {
-  const fetchedWorkout = await axios.get('http://localhost:8080/workout/1').then(response =>response.data);
-  setWorkout(fetchedWorkout);
+const handleWorkoutFetch = async() => {
+  const fetchedWorkout = await axios.get('/workout/1').then(response =>console.log(response.data));
+  console.log(fetchedWorkout);
+  //get fetch to show
 }
-
-console.log(workout);
   return (
     <>
       <button onClick={handleBackClick}>
         Back
       </button>
       <div className='menu_card'>
-        <h1 onClick={handleWorkoutFetch}>Sunday</h1>
+        <button onClick={handleWorkoutFetch}>Sunday</button>
       </div>
       <div className='menu_card'>
-        <h1>Monday</h1>
+        <button>Monday</button>
       </div>
       <div className='menu_card'>
-        <h1>Tuesday</h1>
+        <button>Tuesday</button>
       </div>
       <div className='menu_card'>
-        <h1>Wednesday</h1>
+        <button>Wednesday</button>
       </div>
       <div className='menu_card'>
-        <h1>Thursday</h1>
+        <button>Thursday</button>
       </div>
       <div className='menu_card'>
-        <h1>Friday</h1>
+        <button>Friday</button>
       </div>
       <div className='menu_card'>
-        <h1>Saturday</h1>
+        <button>Saturday</button>
       </div>
     </>
   )
