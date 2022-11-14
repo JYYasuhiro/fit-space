@@ -3,8 +3,8 @@ import axios from 'axios';
 
 
 
-const Week = ({handleBackClick}) => {
-  
+const Week = ({handleBackClick, workout}) => {
+  console.log("workout", workout);
     //returns all days of the week
     //in the state 'workout', the string for a particular workout should be set
     //each day should be clickable, showing the workout for the particular day
