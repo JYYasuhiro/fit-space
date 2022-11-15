@@ -4,13 +4,13 @@
   "description": "***Description*** The purpose is to allow a user to choose from a selection of workout routines, spread out over the course of seven days.",
   "main": "index.js",
   "scripts": {
-    "build": "npm install && cd client && npm install && npm run build",
+    "build": "npm install && npm run migrate && npm run seed && cd client && npm install && npm run build",
     "start": "node ./server/index.js",
     "dev": "nodemon ./server/index.js",
     "make:migration": "knex migrate:make",
     "migrate": "knex migrate:latest",
     "make:seed": "knex seed:make",
-    "seed": "knex seed:run",
+    "seed": "knex seed:run", 
     "concurrent": "concurrently \"npm run dev\" \"cd client && npm start\""
   },
   "repository": {
