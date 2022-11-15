@@ -12,9 +12,16 @@ const Workout = ({handleBackClick, setDay, day, instructions}) => {
         const exerciseName = await res.data;
         console.log("exercise name", exerciseName);
         return exerciseName;
-  }
+    }
   
-
+    const workoutList = () => {
+        return (
+            <>
+                {instructions}
+            </>
+        )
+    }
+    }
 
     return (
         <>
