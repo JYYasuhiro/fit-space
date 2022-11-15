@@ -3,7 +3,8 @@ import axios from 'axios';
 
 
 
-const Week = ({handleBackClick, setDay, day}) => {
+const Week = ({handleBackClick, setDay, day, setInstructions}) => {
+  console.log("the day is currently:", day)
     //returns all days of the week
     //in the state 'workout', the string for a particular workout should be set
     //each day should be clickable, showing the workout for the particular day
@@ -13,42 +14,58 @@ const Week = ({handleBackClick, setDay, day}) => {
 const handleWorkoutFetch = async(day) => {
   const res = await axios.get(`http://localhost:8080/workout/day/1`);
   const workout = await res.data
+  setInstructions(workout);
   console.log("workout" , workout);
   
-  console.log("the day is currently:", day)
+  
   console.log("fetchedWorkout is", fetchedWorkout);
   //get fetch to show
 }
   return (
     <>
-      <button className="back-button" onClick={handleBackClick}>
-        Back
-      </button>
+      <button className="back-button" onClick={handleBackClick}>Back</button>
+
       <div className='menu_card'>
         <button onClick={()=> {
-          setDay(1);
+          setDay("Sunday");
           handleWorkoutFetch(day);
         }}>Sunday</button>
       </div>
       <div className='menu_card'>
         <button onClick={()=> {
-          setDay(2);
-          handleWorkoutFetch(day)}}>Monday</button>
+          setDay("Monday");
+          handleWorkoutFetch(day)
+          }}>Monday</button>
       </div>
       <div className='menu_card'>
-        <button onClick={()=> setDay(3)}>Tuesday</button>
+        <button onClick={()=> {
+          setDay("Tuesday")
+          handleWorkoutFetch(day)
+          }}>Tuesday</button>
       </div>
       <div className='menu_card'>
-        <button onClick={()=> setDay(4)}>Wednesday</button>
+        <button onClick={()=> {
+          setDay("Wednesday")
+          handleWorkoutFetch(day)
+          }}>Wednesday</button>
       </div>
       <div className='menu_card'>
-        <button onClick={()=> setDay(5)}>Thursday</button>
+      <button onClick={()=> {
+          setDay("Thursday")
+          handleWorkoutFetch(day)
+          }}>Thursday</button>
       </div>
       <div className='menu_card'>
-        <button onClick={()=> setDay(6)}>Friday</button>
+      <button onClick={()=> {
+          setDay("Friday")
+          handleWorkoutFetch(day)
+          }}>Friday</button>
       </div>
       <div className='menu_card'>
-        <button onClick={()=> setDay(7)}>Saturday</button>
+      <button onClick={()=> {
+          setDay("Saturday")
+          handleWorkoutFetch(day)
+          }}>Saturday</button>
       </div>
     </>
   )
