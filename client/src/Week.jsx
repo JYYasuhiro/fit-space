@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 
-const Week = ({handleBackClick, setDay, day}) => {
+const Week = ({handleBackClick, setDay, day, setInstructions}) => {
   console.log("the day is currently:", day)
     //returns all days of the week
     //in the state 'workout', the string for a particular workout should be set
@@ -14,6 +14,7 @@ const Week = ({handleBackClick, setDay, day}) => {
 const handleWorkoutFetch = async(day) => {
   const res = await axios.get(`http://localhost:8080/workout/day/1`);
   const workout = await res.data
+  setInstructions(workout);
   console.log("workout" , workout);
   
   

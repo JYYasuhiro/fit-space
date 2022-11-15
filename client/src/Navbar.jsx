@@ -4,7 +4,7 @@ export default function Navbar() {
 
   return (
     <nav>
-        <h1>Fit Space</h1>
+        <h1 className='header'>Fit Space</h1>
     </nav>
   )
 }
