@@ -10,12 +10,8 @@ const App = () => {
   const [currentView, setCurrentView] = useState("menu") 
   const [workout, setWorkout] = useState("");
   const [day, setDay] = useState(0);
-  const [instructions, setInstructions] = useState({}); 
-
-// console.log("day is", day);
-// console.log("current view", currentView);
-// console.log("chosen workout is:", workout);
-// console.log("instructions are", instructions);
+  const [instructions, setInstructions] = useState([]); 
+console.log(instructions);
 
   return (
     <div className="App">
