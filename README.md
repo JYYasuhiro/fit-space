@@ -1,13 +1,13 @@
 ****FitSpace****
 
-(how to setup)
+***Setup***
+
 (who to contact in case of problems)
 
 
 ***Framework***
 This project utilizes the following:
  Javascript,
- Typescript,
  React,
  Node.js,
  Express.js,
