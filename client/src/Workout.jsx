@@ -14,14 +14,15 @@ const Workout = ({handleBackClick, setDay, day, instructions}) => {
         return exerciseName;
     }
   
-    const workoutList = () => {
-        return (
-            <>
-                {instructions}
-            </>
-        )
-    }
-    }
+    // const workoutList = () => {
+    //     return (
+    //         <>
+    //             {instructions
+    //             }
+    //         </>
+    //     )
+    // }
+    // }
 
     return (
         <>
