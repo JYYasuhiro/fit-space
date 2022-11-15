@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./App.css";
-// import axios from "axios";
+import axios from "axios";
 import Navbar from "./Navbar";
 import Menu from "./Menu";
 import Week from "./Week";
@@ -11,7 +11,11 @@ const App = () => {
   const [workout, setWorkout] = useState("");
   const [day, setDay] = useState(0);
   const [instructions, setInstructions] = useState([]); 
-console.log(instructions);
+  const [exercises, setExercises] = useState([]);
+  
+  const handleSetExercises = async () => {
+    const fetch = await axios.get('/exercises');
+  }
 
   return (
     <div className="App">
