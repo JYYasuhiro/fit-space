@@ -58,6 +58,18 @@ function setupServer() {
       }
     })
 
+    //all exercises
+    app.get('/exercises', async(req, res) => {
+        try{
+         const table = await db('exercise_table')
+                .select('*')
+            res.status(200).send(table);
+      } catch(err) {
+          res.status(500).send(err);
+      }
+    })
+
+
     //responds with one exercise with instructions on how many sets and reps
     app.get('/workout/:id', async (req,res) => {
         const id = req.params.id;
@@ -78,7 +90,7 @@ function setupServer() {
               .where('day_id', id)
               .select('*');
               console.log(table);
-          res.status(200).send(table[0])
+          res.status(200).send(table)
       } catch(err) {
           res.status(500).send(err)
       }

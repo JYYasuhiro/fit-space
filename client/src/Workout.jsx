@@ -2,61 +2,39 @@ import React from 'react';
 import axios from 'axios';
 import './workout.css'
 
-const Workout = ({handleBackClick, setDay, day, instructions}) => {
-    const exerciseObj = instructions[0];
-    console.log("instructions in workout component is", instructions);
-   
-    console.log("instructions[0] is ",  instructions[0]);
+const Workout = ({handleBackClick, setDay, day, instructions, exercises}) => {
     
-    const getExerciseId = (exerciseObj) => {
-        let result;
-        for(const id in exerciseObj) {
-            if(id === "exercise_id"){
-                result = exerciseObj[id];
-            }
+    const getExerciseName = (id) => {
+       for(let i = 0; i < exercises.length; i++){
+        if(exercises[i].id === id) {
+            return exercises[i].exercise_name;
         }
-        return result;
+       }
     }
-  //getExerciseId will get the ID of exercise, if the exercise object is given
 
-
-    const fetchExerciseName = async (id) => {
-        const res = await axios.get(`/exercise/${id}`);
-        const exerciseName = await res.data;
-        console.log("exercise name", exerciseName);
-        return exerciseName;
-    }
-  
-    const workoutList = (instructions) => {
+    const workoutList = instructions.map(obj => {
         
-        return (
-            instructions.map(obj => {
+            let name = getExerciseName(obj.exercise_id);
                 return(
-                    <>
+                <div className="number">
                      {obj.order}.
-                        <div className = "exercise-container">
-                        <div>exercise: {fetchExerciseName(obj.exercise_id)}</div>
-                        <div>sets: {obj.sets}</div>
-                        <div>reps: {obj.reps}</div>
+                    <div className = "exercise-container">
+                        <div>exercise: {name}</div>
+                        <div>{obj.sets} sets of {obj.reps} reps</div>
                     </div>
-                    </>
-                   
+                </div>
                 )
-            }) 
-        
-        )
-    }
-
-
+            })
+    
     return (
         <>
-        <button className="back-button" onClick={()=>{
+            <button className="back-button" onClick={()=>{
              handleBackClick();
              setDay(0);
         }}>Back</button>
-          <div>Here's your workout for today:</div>
-          <div>{workoutList(instructions)}</div>
-        </>
+                <div>Here's your workout for today:</div>
+                <div>{workoutList}</div>
+            </>
     )
 }
 
