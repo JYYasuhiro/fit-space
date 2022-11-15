@@ -10,7 +10,6 @@ const Week = ({handleBackClick, setDay, day, setInstructions, instructions}) => 
 const handleWorkoutFetch = async(day) => {
   const res = await axios.get(`/workout/day/${day}`);
   const workout = await res.data; //will return object
-  console.log("fetched workout", workout)
   setInstructions(workout);
 }
  //empty

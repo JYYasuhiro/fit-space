@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import Navbar from "./Navbar";
@@ -14,8 +14,14 @@ const App = () => {
   const [exercises, setExercises] = useState([]);
   
   const handleSetExercises = async () => {
-    const fetch = await axios.get('/exercises');
+    const res = await axios.get('/exercises');
+    const data = await res.data;
+    setExercises(data);
   }
+
+useEffect(()=>{
+  handleSetExercises();
+},[])
 
   return (
     <div className="App">
@@ -44,7 +50,8 @@ const App = () => {
           setDay={setDay}
           day={day}
           setInstructions={setInstructions}
-          instructions={instructions}/>
+          instructions={instructions}
+          exercises={exercises}/>
           )
         )}
       </div>

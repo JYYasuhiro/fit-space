@@ -58,11 +58,11 @@ function setupServer() {
       }
     })
 
+    //all exercises
     app.get('/exercises', async(req, res) => {
         try{
          const table = await db('exercise_table')
                 .select('*')
-                console.log(table);
             res.status(200).send(table);
       } catch(err) {
           res.status(500).send(err);
