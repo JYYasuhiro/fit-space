@@ -9,13 +9,14 @@ import Workout from "./Workout";
 const App = () => {
   const [currentView, setCurrentView] = useState("menu") 
   const [workout, setWorkout] = useState("");
-  const [day, setDay] = useState("");
-  const [instructions, setInstructions] = useState([]);
+  const [day, setDay] = useState(0);
+  const [instructions, setInstructions] = useState({}); 
 
-console.log("day is", day);
-console.log("current view", currentView);
-console.log("chosen workout is:", workout);
-console.log("instructions are", instructions);
+// console.log("day is", day);
+// console.log("current view", currentView);
+// console.log("chosen workout is:", workout);
+// console.log("instructions are", instructions);
+
   return (
     <div className="App">
       <div className="navbar">
@@ -29,13 +30,14 @@ console.log("instructions are", instructions);
           setWorkout={setWorkout}
           />
         ) : (
-          day === "" ? (
+          day === 0 ? (
           <Week 
           handleBackClick={()=>setCurrentView("menu")} 
           workout={workout}
           setDay={setDay}
           day={day}
           setInstructions={setInstructions}
+          instructions={instructions}
           />):(
           <Workout 
           handleBackClick={()=>setCurrentView("week")}
