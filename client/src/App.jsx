@@ -28,6 +28,7 @@ const App = () => {
 
 useEffect(()=>{
   handleSetExercises();
+  handleExerciseType();
 },[])
 
   return (
