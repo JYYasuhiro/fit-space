@@ -12,11 +12,18 @@ const App = () => {
   const [day, setDay] = useState("");
   const [instructions, setInstructions] = useState([]); 
   const [exercises, setExercises] = useState([]);
+  const [exerciseType, setExerciseType] = useState([]);
   
   const handleSetExercises = async () => {
     const res = await axios.get('/exercises');
     const data = await res.data;
     setExercises(data);
+  }
+
+  const handleExerciseType = async () => {
+    const res = await axios.get('/types');
+    const data = await res.data;
+    setExerciseType(data);
   }
 
 useEffect(()=>{
@@ -51,7 +58,9 @@ useEffect(()=>{
           day={day}
           setInstructions={setInstructions}
           instructions={instructions}
-          exercises={exercises}/>
+          exercises={exercises}
+          exerciseType={exerciseType}
+          />
           )
         )}
       </div>
