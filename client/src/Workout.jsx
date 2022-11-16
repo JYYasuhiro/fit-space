@@ -30,7 +30,7 @@ const Workout = ({handleBackClick, setDay, day, instructions, exercises, exercis
                     <div className = "exercise-container">
                         <div>exercise: {name}</div>
                         <div>{obj.sets} sets of {obj.reps} reps</div>
-                        <div>{type}</div>
+                        <div>this works out your {type}</div>
                     </div>
                 </div>
                 )

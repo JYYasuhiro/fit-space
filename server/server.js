@@ -29,6 +29,16 @@ function setupServer() {
         res.status(500).send(err);
       }
     });
+
+    app.get('/types', async (req,res) => {
+        try{
+          const table = await db('exercise_type')
+              .select('*');
+          res.status(200).send(table)
+        } catch(err) {
+          res.status(500).send(err);
+        }
+      });
     
     //responds with the day of the week, week_table ID
     app.get('/week/:id', async (req,res) => {
