@@ -1,5 +1,10 @@
 .menu_card {
-    border: solid 1px black;
-    padding: 2rem;
+    color: rgb(152, 152, 152);
+    padding: 1rem;
     margin: 1rem;
+    border-radius: 5px;
+}
+
+.workout-button {
+    color: grey;
 }

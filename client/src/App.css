@@ -1,6 +1,10 @@
-
-
-
+* {
+  
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
 .back-button {
   text-decoration: none;
   padding: 2em;

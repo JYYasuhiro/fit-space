@@ -1,4 +1,4 @@
-*{
+body{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,3 +33,14 @@
     font-size: 1rem;
     color: rgb(55, 55, 61);
 }
+
+.workout-text {
+    font-size: 1rem;
+}
+
+.back-button {
+    text-decoration: none;
+    padding: 2em;
+    margin: 2rem;
+    border: 1px solid black;
+  }
