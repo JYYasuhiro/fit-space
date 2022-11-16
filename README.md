@@ -2,6 +2,11 @@
 
 ***Setup***
 
+To start, install necessary dependencies in node:
+
+```npm i```
+
+
 (who to contact in case of problems)
 
 
