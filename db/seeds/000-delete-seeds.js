@@ -8,4 +8,5 @@ exports.seed = async function(knex) {
   await knex('exercise_table').del()
   await knex('week_table').del()
   await knex('exercise_type').del()
+  await knex('workout_table').del()
 };
