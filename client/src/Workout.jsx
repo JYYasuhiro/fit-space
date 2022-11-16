@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './workout.css'
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
 
 const Workout = ({handleBackClick, setDay, day, instructions, exercises}) => {
     
@@ -27,14 +29,14 @@ const Workout = ({handleBackClick, setDay, day, instructions, exercises}) => {
             })
     
     return (
-        <>
-            <button className="back-button" onClick={()=>{
+        <Container>
+            <Button className="back-button" onClick={()=>{
              handleBackClick();
-             setDay(0);
-        }}>Back</button>
-                <div>Here's your workout for today:</div>
-                <div>{workoutList}</div>
-            </>
+             setDay("");
+        }}>Back</Button>
+                <div>Here's your workout for {day}:</div>
+                <Container>{workoutList}</Container>
+            </Container>
     )
 }
 
