@@ -44,12 +44,16 @@ const Workout = ({handleBackClick, setDay, day, instructions, exercises, exercis
              handleBackClick();
              setDay("");
         }}>Back</Button>
-                <div>Here's your workout for {day}:</div>
+        <Container>
+            <div className='workout-text'>Here's your workout for {day}:</div>
+        </Container>
+               
         <Container 
         sx={{
             borderRadius:2,
             margin: 10
-        }}>{workoutList}</Container>
+        }}>{workoutList}
+        </Container>
         </Container>
     )
 }
