@@ -23,7 +23,7 @@ export default function Navbar() {
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
            Fit Space   
-           <FitnessCenterIcon/>
+           <FitnessCenterIcon sx ={{margin: 2}}/>
           </Typography>
         </Toolbar>
       </AppBar>

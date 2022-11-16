@@ -1,10 +1,35 @@
-.number {
-    font-size: 2rem;
-}
-.exercise-container {
-    border:1px black solid;
+*{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .number {
     font-size: 2rem;
+}
+.exercise-container {
+   background-color: rgb(225, 225, 234);
+   border-radius: 5px;
+   box-shadow: 5px 5px 5px;
+   margin: 10px;
+   padding: 20px;
+}
+
+.number {
+    font-size: 2rem;
+}
+
+.exercise {
+    font-size: 2rem;
+}
+
+.instructions {
+    font-size: 1.5rem;
+    color: rgb(63, 63, 63);
+}
+
+.target {
+    font-size: 1rem;
+    color: rgb(55, 55, 61);
 }

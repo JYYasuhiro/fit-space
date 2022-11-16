@@ -16,35 +16,41 @@ const Workout = ({handleBackClick, setDay, day, instructions, exercises, exercis
     const getExerciseType = (id) => {
         for(let i = 0; i < exerciseType.length; i++){
          if(exerciseType[i].id === id) {
-             return exerciseType[i].exercise_type;
+             return exerciseType[i].name;
          }
         }
      }
 
     const workoutList = instructions.map(obj => {
             let name = getExerciseName(obj.exercise_id);
-            let type = getExerciseType(obj.exercise_type)
+            let type = getExerciseType(obj.type_id)
                 return(
-                <div className="number">
-                     {obj.order}.
                     <div className = "exercise-container">
-                        <div>exercise: {name}</div>
-                        <div>{obj.sets} sets of {obj.reps} reps</div>
-                        <div>this works out your {type}</div>
+                        <div className="number">
+                            {obj.order}. 
+                        </div>
+                        <div className = "exercise">exercise: {name}</div>
+                        <div className = "instructions">{obj.sets} sets of {obj.reps} reps</div>
+                        <div className = "target">target area: {type}</div>
                     </div>
-                </div>
                 )
             })
     
     return (
-        <Container>
-            <Button className="back-button" onClick={()=>{
+        <Container sx={{borderRadius:2}}>
+        <Button 
+            sx={{borderRadius:2}} 
+            className="back-button" onClick={()=>{
              handleBackClick();
              setDay("");
         }}>Back</Button>
                 <div>Here's your workout for {day}:</div>
-                <Container>{workoutList}</Container>
-            </Container>
+        <Container 
+        sx={{
+            borderRadius:2,
+            margin: 10
+        }}>{workoutList}</Container>
+        </Container>
     )
 }
 

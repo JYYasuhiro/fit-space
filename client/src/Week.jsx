@@ -16,7 +16,7 @@ const handleWorkoutFetch = async(day) => {
 
   return (
     <>
-      <Button className="back-button" onClick={handleBackClick}>Back</Button>
+      <Button variant="outline" className="back-button" onClick={handleBackClick}>Back</Button>
 
       <div className='menu_card'>
         <Button onClick={()=> {
