@@ -9,7 +9,7 @@ import Workout from "./Workout";
 const App = () => {
   const [currentView, setCurrentView] = useState("menu") 
   const [workout, setWorkout] = useState("");
-  const [day, setDay] = useState(0);
+  const [day, setDay] = useState("");
   const [instructions, setInstructions] = useState([]); 
   const [exercises, setExercises] = useState([]);
   
@@ -36,7 +36,7 @@ useEffect(()=>{
           setWorkout={setWorkout}
           />
         ) : (
-          day === 0 ? (
+          day === "" ? (
           <Week 
           handleBackClick={()=>setCurrentView("menu")} 
           workout={workout}

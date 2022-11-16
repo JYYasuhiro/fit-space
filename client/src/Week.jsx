@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import Button from '@mui/material/Button';
 
 
 const Week = ({handleBackClick, setDay, day, setInstructions, instructions}) => {
@@ -16,49 +16,49 @@ const handleWorkoutFetch = async(day) => {
 
   return (
     <>
-      <button className="back-button" onClick={handleBackClick}>Back</button>
+      <Button className="back-button" onClick={handleBackClick}>Back</Button>
 
       <div className='menu_card'>
-        <button onClick={()=> {
-          setDay(1);
+        <Button onClick={()=> {
+          setDay("Sunday");
           handleWorkoutFetch(1);
-        }}>Sunday</button>
+        }}>Sunday</Button>
       </div>
       <div className='menu_card'>
-        <button onClick={()=> {
-          setDay(2);
+        <Button onClick={()=> {
+          setDay("Monday");
           handleWorkoutFetch(2)
-          }}>Monday</button>
+          }}>Monday</Button>
       </div>
       <div className='menu_card'>
-        <button onClick={()=> {
-          setDay(3)
+        <Button onClick={()=> {
+          setDay("Tuesday")
           handleWorkoutFetch(3)
-          }}>Tuesday</button>
+          }}>Tuesday</Button>
       </div>
       <div className='menu_card'>
-        <button onClick={()=> {
-          setDay(4)
+        <Button onClick={()=> {
+          setDay("Wednesday")
           handleWorkoutFetch(4)
-          }}>Wednesday</button>
+          }}>Wednesday</Button>
       </div>
       <div className='menu_card'>
-      <button onClick={()=> {
-          setDay(5);
+      <Button onClick={()=> {
+          setDay("Thursday");
           handleWorkoutFetch(5)
-          }}>Thursday</button>
+          }}>Thursday</Button>
       </div>
       <div className='menu_card'>
-      <button onClick={()=> {
-          setDay(6);
+      <Button onClick={()=> {
+          setDay("Friday");
           handleWorkoutFetch(6)
-          }}>Friday</button>
+          }}>Friday</Button>
       </div>
       <div className='menu_card'>
-      <button onClick={()=> {
-          setDay(7);
+      <Button onClick={()=> {
+          setDay("Saturday");
           handleWorkoutFetch(7)
-          }}>Saturday</button>
+          }}>Saturday</Button>
       </div>
     </>
   )
