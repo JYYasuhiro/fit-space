@@ -1,9 +1,15 @@
 * {
-  
+  height:100%;
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+}
+.App{
+  height: 100%
+}
+.container {
+  height: 100%;
 }
 .back-button {
   text-decoration: none;

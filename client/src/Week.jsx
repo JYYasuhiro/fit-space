@@ -34,10 +34,12 @@ const handleWorkoutFetch = async(day) => {
           }}>Tuesday</Button>
       </div>
       <div className='menu_card'>
-        <Button sx = {{border:1}} onClick={()=> {
+        <Button sx = {{border:1}} 
+        onClick={()=> {
           setDay("Wednesday")
           handleWorkoutFetch(4)
-          }}>Wednesday</Button>
+          }}
+          >Wednesday</Button>
       </div>
       <div className='menu_card'>
       <Button sx = {{border:1}} onClick={()=> {
