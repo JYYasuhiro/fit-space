@@ -8,10 +8,12 @@ const Menu = ({handleCurrentView, setWorkout}) => {
   return (
     <>
       <div className='menu_card'>
-        <Button sx = {{border:1}} onClick={()=> {
+        <Button sx = {{border:1}} 
+        onClick={()=> {
           handleCurrentView();
           setWorkout("push-pull");
-        }}>A: The Push-pull Workout</Button>
+        }}
+        >A: The Push-pull Workout</Button>
       </div>
       <div className='menu_card'>
         <Button sx = {{border:1}} onClick={()=> {
