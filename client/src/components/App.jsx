@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Menu from "./Menu";
 import Week from "./Week";
 import Workout from "./Workout";
+import AllWorkouts from "./AllWorkouts";
 
 const App = () => {
   const [currentView, setCurrentView] = useState("menu") 
@@ -36,36 +37,11 @@ useEffect(()=>{
       <div className="navbar">
         <Navbar />
       </div>
-
-      <div className="container">
-        {currentView === "menu" ? (
-          <Menu 
-          handleCurrentView={()=>setCurrentView("week")}
-          setWorkout={setWorkout}
-          />
-        ) : (
-          day === "" ? (
-          <Week 
-          handleBackClick={()=>setCurrentView("menu")} 
-          workout={workout}
-          setDay={setDay}
-          day={day}
-          setInstructions={setInstructions}
-          instructions={instructions}
-          />):(
-          <Workout 
-          handleBackClick={()=>setCurrentView("week")}
-          setDay={setDay}
-          day={day}
-          setInstructions={setInstructions}
-          instructions={instructions}
-          exercises={exercises}
-          exerciseType={exerciseType}
-          />
-          )
-        )}
+      <div className = "allWorkouts">
+        <AllWorkouts/>
       </div>
     </div>
+   
   );
 };
 
