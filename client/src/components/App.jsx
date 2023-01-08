@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "../styles/App.css";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Menu from "./Menu";
 import Week from "./Week";
 import Workout from "./Workout";
 import AllWorkouts from "./AllWorkouts";
+import Sidenav from "./Sidenav";
 
 const App = () => {
   const [currentView, setCurrentView] = useState("menu") 
@@ -37,9 +38,38 @@ useEffect(()=>{
       <div className="navbar">
         <Navbar />
       </div>
-      <div className = "allWorkouts">
-        <AllWorkouts/>
+      <div className="sidenav">
+        <Sidenav />
       </div>
+      <div className="container">
+        {currentView === "menu" ? (
+          <Menu 
+          handleCurrentView={()=>setCurrentView("week")}
+          setWorkout={setWorkout}
+          />
+        ) : (
+          day === "" ? (
+          <Week 
+          handleBackClick={()=>setCurrentView("menu")} 
+          workout={workout}
+          setDay={setDay}
+          day={day}
+          setInstructions={setInstructions}
+          instructions={instructions}
+          />):(
+          <Workout 
+          handleBackClick={()=>setCurrentView("week")}
+          setDay={setDay}
+          day={day}
+          setInstructions={setInstructions}
+          instructions={instructions}
+          exercises={exercises}
+          exerciseType={exerciseType}
+          />
+          )
+        )}
+      </div>
+     
     </div>
    
   );

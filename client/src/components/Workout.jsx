@@ -1,5 +1,5 @@
 import React from 'react';
-import './workout.css'
+import '../styles/workout.css'
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
@@ -38,12 +38,12 @@ const Workout = ({handleBackClick, setDay, day, instructions, exercises, exercis
     
     return (
         <Container sx={{borderRadius:2}}>
-        <Button 
-            sx={{borderRadius:2}} 
-            className="back-button" onClick={()=>{
-             handleBackClick();
-             setDay("");
-        }}>Back</Button>
+            <Button 
+                sx={{borderRadius:2}} 
+                className="back-button" onClick={()=>{
+                handleBackClick();
+                setDay("");
+            }}>Back</Button>
         <Container>
             <div className='workout-text'>Here's your workout for {day}:</div>
         </Container>
