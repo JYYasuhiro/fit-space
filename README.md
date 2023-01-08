@@ -1,5 +1,7 @@
 ****FitSpace**** </br>
 
+https://fit-space.onrender.com/
+
 A web app that allows the user to retrieve workout information across days of the week. 
 
 **Technologies** </br>
@@ -27,6 +29,7 @@ To start the server, run:
 **Features in progress**
 
 The following features are either in progress or will be implemented: </br>
+   -a "Create a new workout" tab </br>
    -create custom workout menu from provided exercises </br>
    -save custom workout </br>
    -edit custom workout </br>
