@@ -5,8 +5,8 @@ import Navbar from "./Navbar";
 import Menu from "./Menu";
 import Week from "./Week";
 import Workout from "./Workout";
-import AllWorkouts from "./AllWorkouts";
-import Sidenav from "./Sidenav";
+import AllWorkouts from "../../src/routes/AllWorkouts";
+import Sidenav from "../../src/components/Sidenav";
 
 const App = () => {
   const [currentView, setCurrentView] = useState("menu") 
