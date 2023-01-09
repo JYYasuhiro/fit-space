@@ -8,15 +8,15 @@ import AllWorkouts from './routes/AllWorkouts';
 function App() {
   return (
     <div className="App">
-      <nav>this is the nav bar</nav>
+      <nav>this is where the nav bar goes</nav>
       <Sidenav/>
       <p>this is App</p>
 
       <Routes>
-        <Route path = {'/allworkouts'} element = {<AllWorkouts/>}/>
+        {/* <Route path = {'/home'} element = {<HomePage/>}/> */}
+        <Route path = {'/allWorkouts'} element = {<AllWorkouts/>}/>
         <Route path = {'/customMenu'} element = {<CustomMenu/>}/>
       </Routes>
-      
     </div>
   )
 }

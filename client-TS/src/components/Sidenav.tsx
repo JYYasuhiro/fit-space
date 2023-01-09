@@ -1,13 +1,21 @@
 import React from 'react';
-import '../styles/Sidenav.css'
+import { Link } from 'react-router-dom';
+import '../styles/Sidenav.css';
+
 const Sidenav = () => {
     return (
-        <>
-            <div className='sidenav'>
-                <a href="#section">Choose a workout</a>
-                <a href="#section">Create new workout</a>
-            </div>
-        </>
+        
+            <nav className='sidenav'>
+                <ul>
+                    <li>
+                        <Link to="/allWorkouts">Choose a workout</Link>
+                    </li>
+                    <li>
+                        <Link to="/customMenu">Create new workout</Link>
+                    </li>
+                </ul>
+            </nav>
+        
         
     )
 }
