@@ -4,6 +4,11 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
+} */
+.navbar{
+  
+  width: 100%;
+  margin-top:0;
 }
 .App{
   height: 100%;
@@ -18,5 +23,5 @@
   padding: 2em;
   margin: 2rem;
   border: 1px solid black;
-} */
+}
 

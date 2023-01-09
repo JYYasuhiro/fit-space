@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
-import "../styles/App.css";
+import "../styles/AllWorkouts.css";
 import axios from "axios";
-import Navbar from "./Navbar";
-import Menu from "./Menu";
-import Week from "./Week";
-import Workout from "./Workout";
-import AllWorkouts from "./AllWorkouts";
-import Sidenav from "./Sidenav";
+import Menu from "../components/Menu";
+import Week from "../components/Week";
+import Workout from "../components/Workout";
 
-const App = () => {
+const AllWorkouts = () => {
   const [currentView, setCurrentView] = useState("menu") 
-  const [workout, setWorkout] = useState("");
-  const [day, setDay] = useState("");
-  const [instructions, setInstructions] = useState([]); 
-  const [exercises, setExercises] = useState([]);
-  const [exerciseType, setExerciseType] = useState([]);
+  const [workout, setWorkout] = useState<string>("");
+  const [day, setDay] = useState<string>("");
+  const [instructions, setInstructions] = useState<[]>([]); 
+  const [exercises, setExercises] = useState<[]>([]);
+  const [exerciseType, setExerciseType] = useState<[]>([]);
   
   const handleSetExercises = async () => {
     const res = await axios.get('/exercises');
@@ -28,21 +25,18 @@ const App = () => {
     setExerciseType(data);
   }
 
-useEffect(()=>{
-  handleSetExercises();
-  handleExerciseType();
-},[])
+  // useEffect(()=>{
+  //   handleSetExercises();
+  //   handleExerciseType();
+  // },[])
 
   return (
-    <div className="App">
-      <div className="navbar">
-        <Navbar />
-      </div>
-      <div className="sidenav">
-        <Sidenav />
-      </div>
-      <div className="container">
-        {currentView === "menu" ? (
+    <>
+      
+    this is all workouts
+    
+      {/* <>
+      {currentView === "menu" ? (
           <Menu 
           handleCurrentView={()=>setCurrentView("week")}
           setWorkout={setWorkout}
@@ -68,11 +62,13 @@ useEffect(()=>{
           />
           )
         )}
-      </div>
-     
-    </div>
-   
+      </> */}
+    </>
+      
+      
+        
+      
   );
 };
 
-export default App;
+export default AllWorkouts;
