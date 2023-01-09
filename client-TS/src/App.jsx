@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import CustomMenu from './routes/CustomMenu';
 import Sidenav from './components/Sidenav.jsx';
 import AllWorkouts from './routes/AllWorkouts';
+import WorkoutList from './routes/WorkoutList';
 function App() {
   return (
     <div className="App">
@@ -16,9 +17,10 @@ function App() {
         {/* <Route path = {'/home'} element = {<HomePage/>}/> */}
         <Route path = {'/allWorkouts'} element = {<AllWorkouts/>}/>
         <Route path = {'/customMenu'} element = {<CustomMenu/>}/>
+        <Route path = {'/workoutList'} element = {<WorkoutList/>}/>
       </Routes>
     </div>
   )
 }
 
-export default App
+export default App;

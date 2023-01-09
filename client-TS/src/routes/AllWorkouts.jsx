@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../styles/AllWorkouts.css";
 import axios from "axios";
-// import Navbar from "./Navbar";
-// import Menu from "./Menu";
-// import Week from "./Week";
-// import Workout from "./Workout";
+import Menu from "../components/Menu";
+import Week from "../components/Week";
+import Workout from "../components/Workout";
 
 const AllWorkouts = () => {
   const [currentView, setCurrentView] = useState("menu") 
-  const [workout, setWorkout] = useState("");
-  const [day, setDay] = useState("");
-  const [instructions, setInstructions] = useState([]); 
-  const [exercises, setExercises] = useState([]);
-  const [exerciseType, setExerciseType] = useState([]);
+  const [workout, setWorkout] = useState<string>("");
+  const [day, setDay] = useState<string>("");
+  const [instructions, setInstructions] = useState<[]>([]); 
+  const [exercises, setExercises] = useState<[]>([]);
+  const [exerciseType, setExerciseType] = useState<[]>([]);
   
   const handleSetExercises = async () => {
     const res = await axios.get('/exercises');
@@ -26,15 +25,18 @@ const AllWorkouts = () => {
     setExerciseType(data);
   }
 
-  useEffect(()=>{
-    handleSetExercises();
-    handleExerciseType();
-  },[])
+  // useEffect(()=>{
+  //   handleSetExercises();
+  //   handleExerciseType();
+  // },[])
 
   return (
-      <div className="container">
-        <p>this is all workouts</p>
-        {/* {currentView === "menu" ? (
+    <>
+      
+    this is all workouts
+    
+      {/* <>
+      {currentView === "menu" ? (
           <Menu 
           handleCurrentView={()=>setCurrentView("week")}
           setWorkout={setWorkout}
@@ -59,9 +61,13 @@ const AllWorkouts = () => {
           exerciseType={exerciseType}
           />
           )
-        )} */}
-      </div>
-     
+        )}
+      </> */}
+    </>
+      
+      
+        
+      
   );
 };
 

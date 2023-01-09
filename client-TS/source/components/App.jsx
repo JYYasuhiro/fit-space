@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/App.css";
 import axios from "axios";
-import Navbar from "./Navbar";
-import Menu from "./Menu";
-import Week from "./Week";
-import Workout from "./Workout";
+import Navbar from "../../src/components/Navbar";
+import Menu from "../../src/components/Menu";
+import Week from "../../src/components/Week";
+import Workout from "../../src/components/Workout";
 import AllWorkouts from "../../src/routes/AllWorkouts";
 import Sidenav from "../../src/components/Sidenav";
 

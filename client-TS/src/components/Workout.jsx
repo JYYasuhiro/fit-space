@@ -3,6 +3,7 @@ import '../styles/workout.css'
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
+
 const Workout = ({handleBackClick, setDay, day, instructions, exercises, exerciseType}) => {
     
     const getExerciseName = (id) => {
