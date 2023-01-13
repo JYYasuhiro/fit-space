@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <div className='navbar__container'>
-      <Box sx={{ height: '100px' }}>
+      {/* <Box sx={{ height: '100px' }}>
         <AppBar position="static" maxwidth="lg">
           <Toolbar>
             <IconButton
@@ -27,7 +27,8 @@ export default function Navbar() {
             </Typography>
           </Toolbar>
         </AppBar>
-      </Box>
+      </Box> */}
+      <p className='title'>Fit-space</p>
     </div>
     
 

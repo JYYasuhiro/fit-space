@@ -6,12 +6,14 @@ import CustomMenu from './routes/CustomMenu';
 import Sidenav from './components/Sidenav.jsx';
 import AllWorkouts from './routes/AllWorkouts';
 import WorkoutList from './routes/WorkoutList';
+import Navbar from './components/Navbar';
+
 function App() {
   return (
     <div className="App">
-      <nav>this is where the nav bar goes</nav>
+      <Navbar/>
       <Sidenav/>
-      <p>this is App</p>
+      {/* <p>this is App</p> */}
 
       <Routes>
         {/* <Route path = {'/home'} element = {<HomePage/>}/> */}
